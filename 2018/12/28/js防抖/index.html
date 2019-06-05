@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="jacascript,">
+  <meta name="keywords" content="JS,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JS防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量input框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发送，然">
-<meta name="keywords" content="jacascript">
+<meta name="description" content="JS 防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量 input 框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于js防抖和节流">
 <meta property="og:url" content="http://yoursite.com/2018/12/28/js防抖/index.html">
 <meta property="og:site_name" content="李小朋的博客">
-<meta property="og:description" content="JS防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量input框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发送，然">
+<meta property="og:description" content="JS 防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量 input 框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T10:07:51.000Z">
+<meta property="og:updated_time" content="2019-06-05T13:05:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于js防抖和节流">
-<meta name="twitter:description" content="JS防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量input框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发送，然">
+<meta name="twitter:description" content="JS 防抖&amp;emsp;&amp;emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量 input 框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发">
 
 
 
@@ -320,13 +320,13 @@
       
 
       
-        <h3 id="JS防抖"><a href="#JS防抖" class="headerlink" title="JS防抖"></a>JS防抖</h3><p>&emsp;&emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量input框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发送，然后我就找到了js防抖</p>
-<p>原文网址：<a href="https://juejin.im/post/5b8de829f265da43623c4261?utm_source=gold_browser_extension" target="_blank" rel="noopener">https://juejin.im/post/5b8de829f265da43623c4261?utm_source=gold_browser_extension</a><br>我把原文缩减了下写了个小demo<br>直接上代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">html： </span><br><span class="line">  &lt;input id=&apos;debounce&apos; /&gt;</span><br><span class="line">JS:</span><br><span class="line">var timer = false;</span><br><span class="line">function debounce(delay) &#123;</span><br><span class="line">      clearTimeout(timer)  // 清除未执行的代码，重置回初始化状态</span><br><span class="line">      timer = setTimeout(function () &#123;</span><br><span class="line">            console.log(&apos;函数鸡柳&apos;)</span><br><span class="line">      &#125;, delay)</span><br><span class="line">&#125;</span><br><span class="line">let inputb = document.getElementById(&apos;debounce&apos;)</span><br><span class="line">inputb.addEventListener(&apos;keyup&apos;, function (e) &#123;</span><br><span class="line">   debounce(500)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>函数防抖的要点，需要一个setTimeout来辅助实现,延迟执行需要跑的代码<br>如果方法多次触发，则把上次记录的延迟执行代码用clearTimeout清掉，重新开始<br>多用于用户名邮箱等等认证，或购物车数量</p>
-<h3 id="JS节流"><a href="#JS节流" class="headerlink" title="JS节流"></a>JS节流</h3><p>规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效</p>
+        <h3 id="JS-防抖"><a href="#JS-防抖" class="headerlink" title="JS 防抖"></a>JS 防抖</h3><p>&emsp;&emsp;最近在做公司商城项目时候，有个需求就是购物车里边，数量 input 框需要根据你当前输入的值，每次输入都要发送更新请求，然后后端进行计算，前端重新渲染页面，那么问题来，我每次输入一个数字都会发送一个请求到后端，这样就非常的浪费资源，页面加载也会变慢，于是我查看了下淘宝的购物车页面，发现他们是输入框输入数字停顿大概零点几秒后再开始发送请求，而不是像我这样每次输入都发送，然后我就找到了 js 防抖</p>
+<p>原文网址：<a href="https://juejin.im/post/5b8de829f265da43623c4261?utm_source=gold_browser_extension" target="_blank" rel="noopener">https://juejin.im/post/5b8de829f265da43623c4261?utm_source=gold_browser_extension</a><br>我把原文缩减了下写了个小 demo<br>直接上代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">html：</span><br><span class="line">  &lt;input id=&apos;debounce&apos; /&gt;</span><br><span class="line">JS:</span><br><span class="line">var timer = false;</span><br><span class="line">function debounce(delay) &#123;</span><br><span class="line">      clearTimeout(timer)  // 清除未执行的代码，重置回初始化状态</span><br><span class="line">      timer = setTimeout(function () &#123;</span><br><span class="line">            console.log(&apos;函数鸡柳&apos;)</span><br><span class="line">      &#125;, delay)</span><br><span class="line">&#125;</span><br><span class="line">let inputb = document.getElementById(&apos;debounce&apos;)</span><br><span class="line">inputb.addEventListener(&apos;keyup&apos;, function (e) &#123;</span><br><span class="line">   debounce(500)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>函数防抖的要点，需要一个 setTimeout 来辅助实现,延迟执行需要跑的代码<br>如果方法多次触发，则把上次记录的延迟执行代码用 clearTimeout 清掉，重新开始<br>多用于用户名邮箱等等认证，或购物车数量</p>
+<h3 id="JS-节流"><a href="#JS-节流" class="headerlink" title="JS 节流"></a>JS 节流</h3><p>规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; id=&quot;d1&quot;&gt;</span><br><span class="line"></span><br><span class="line">var time = 0</span><br><span class="line">document.getElementById(&quot;d1&quot;).onkeyup=function()&#123;</span><br><span class="line">    set()</span><br><span class="line">&#125;</span><br><span class="line">function set()&#123;</span><br><span class="line">    var date = new Date().getTime()</span><br><span class="line">    if(date-time&gt;=2000)&#123;</span><br><span class="line">        timer = setTimeout(e=&gt;&#123;</span><br><span class="line">            console.log(&quot;红烧&quot;)</span><br><span class="line">            time = date</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后你就会发现他会每隔2秒执行一次<br>节流我的思路就是每次输入的时候获取当前的毫秒数，如果当前毫秒数减去上一次的毫秒数&gt;=2000了，这时候开始进行定时器的逻辑，定时器结束后把结束的时间换成当前的time<br>函数节流应用的实际场景，多数在监听页面元素滚动事件的时候会用到。因为滚动事件，是一个高频触发的事件</p>
+<p>然后你就会发现他会每隔 2 秒执行一次<br>节流我的思路就是每次输入的时候获取当前的毫秒数，如果当前毫秒数减去上一次的毫秒数&gt;=2000 了，这时候开始进行定时器的逻辑，定时器结束后把结束的时间换成当前的 time<br>函数节流应用的实际场景，多数在监听页面元素滚动事件的时候会用到。因为滚动事件，是一个高频触发的事件</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
 <li>函数防抖和函数节流都是防止某一时间频繁触发，但是这两兄弟之间的原理却不一样</li>
 <li>函数防抖是某一段时间内只执行一次，而函数节流是间隔时间执行</li>
@@ -348,7 +348,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jacascript/" rel="tag"># jacascript</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -454,7 +454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS防抖"><span class="nav-number">1.</span> <span class="nav-text">JS防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS节流"><span class="nav-number">2.</span> <span class="nav-text">JS节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-防抖"><span class="nav-number">1.</span> <span class="nav-text">JS 防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-节流"><span class="nav-number">2.</span> <span class="nav-text">JS 节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
