@@ -1,5 +1,5 @@
 ---
-title: copy
+title: 复制粘贴功能
 date: 2019-06-05 21:04:49
 tags: JS
 ---
