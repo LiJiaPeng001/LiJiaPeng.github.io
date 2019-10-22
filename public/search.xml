@@ -11,7 +11,7 @@
     <content type="text"><![CDATA[1234567891011121314151617181920212223let scrollBarWidth;export default function () &#123; if (scrollBarWidth !== undefined) return scrollBarWidth; const outer = document.createElement(&apos;div&apos;); outer.style.visibility = &apos;hidden&apos;; outer.style.width = &apos;100px&apos;; outer.style.position = &apos;absolute&apos;; outer.style.top = &apos;-9999px&apos;; document.body.appendChild(outer); const widthNoScroll = outer.offsetWidth; outer.style.overflow = &apos;scroll&apos;; const inner = document.createElement(&apos;div&apos;); inner.style.width = &apos;100%&apos;; outer.appendChild(inner); const widthWithScroll = inner.offsetWidth; outer.parentNode.removeChild(outer); scrollBarWidth = (widthNoScroll - widthWithScroll) / (window.devicePixelRatio || 2); return scrollBarWidth&#125; 实现弹窗背景固定方法12345678910111213141516171819let top = 0export function lock(isFixed = true) &#123; let bodyEl = document.body console.log(ScrollBarWidth()) if (isFixed) &#123; top = window.scrollY bodyEl.style.position = &apos;fixed&apos; bodyEl.style.top = `-$&#123;top&#125;px` bodyEl.style.right = `$&#123;ScrollBarWidth()&#125;px` &#125; else &#123; bodyEl.style.position = &apos;&apos; bodyEl.style.right = &apos;&apos; bodyEl.style.top = &apos;&apos; window.scrollTo(0, top) // 回到原先的top &#125;&#125;]]></content>
   </entry>
   <entry>
-    <title><![CDATA[html]]></title>
+    <title><![CDATA[常用的工具]]></title>
     <url>%2F2019%2F07%2F15%2Fhtml%2F</url>
     <content type="text"><![CDATA[超出行隐藏12345overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2; 参数可为任意行数 实现一个 compose1234567891011121314function compose(...fns) &#123; return function (x) &#123; return fns.reduce(function (arg, fn) &#123; return fn(arg); &#125;, x) &#125; &#125; function a(num) &#123; return num + 5 &#125; function b(num) &#123; return num + 2 &#125; console.log(compose(a, b)(5))]]></content>
       <tags>
@@ -19,7 +19,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[copy]]></title>
+    <title><![CDATA[复制粘贴功能]]></title>
     <url>%2F2019%2F06%2F05%2Fcopy%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728function copyTextToClipboard(text) &#123; var textArea = document.createElement(&quot;textarea&quot;) textArea.style.position = &apos;fixed&apos; textArea.style.top = 0 textArea.style.left = 0 textArea.style.width = &apos;2em&apos; textArea.style.height = &apos;2em&apos; textArea.style.padding = 0 textArea.style.border = &apos;none&apos; textArea.style.outline = &apos;none&apos; textArea.style.boxShadow = &apos;none&apos; textArea.style.background = &apos;transparent&apos; textArea.value = text document.body.appendChild(textArea) textArea.select() try &#123; var msg = document.execCommand(&apos;copy&apos;) ? &apos;成功&apos; : &apos;失败&apos; alert(&apos;复制内容 &apos; + msg); &#125; catch (err) &#123; alert(&apos;不能使用这种方法复制内容&apos;); &#125; document.body.removeChild(textArea)&#125; copyTextToClipboard(‘新垣结衣’)]]></content>
       <tags>
@@ -75,9 +75,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2019]]></title>
+    <title><![CDATA[2019年10月18日]]></title>
     <url>%2F2018%2F12%2F20%2F2019%2F</url>
-    <content type="text"><![CDATA[新的一年新的开始我要找个女朋友~ &emsp;&emsp;从 2017 年 12 月份 1 号入职到现在有一年了，离开大姐的第一年，我有点想她。]]></content>
+    <content type="text"><![CDATA[]]></content>
       <tags>
         <tag>about</tag>
       </tags>
