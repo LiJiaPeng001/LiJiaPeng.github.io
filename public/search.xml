@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[阿里云服务器配置jenkins新手入门]]></title>
+    <url>%2F2019%2F10%2F23%2Fjenkins%2F</url>
+    <content type="text"><![CDATA[安装 java 并设置环境变量12我有点迷，当时我是自己下载然后用ftp上传上去然后解压，后续其他方法我再试试环境变量地址: vi /etc/profile 安装 docker123456789101112# 安装必要的一些系统工具sudo yum install -y yum-utils device-mapper-persistent-data lvm2# 添加软件源sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo# 添加软国内软件源sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo# 官网推荐# 更新并安装Docker-CEsudo yum install docker-ce docker-ce-cli containerd.io 然后安装 jenkins 镜像1234567891011121314151617181920212223# 查看安装镜像docker image ls# 安装jenkins镜像docker pull jenkinsci/blueocean# 创建一个jenkins目录mkdir /home/jenkins_home# 启动一个jenkins容器 -d后台运行# /home/jenkins_home/:/home/jenkins_home/ 是为了做共享文件夹，从git克隆代码后然后共享到主机进行打包# --name 自定义名字docker run --name jenkins -p 8081:8080 -v /home/jenkins_home/:/home/jenkins_home/ jenkinsci/blueocean -d# 启动docker 启动镜像systemctl start dockerservice docker stop #关闭dockerdocker start jenkins #开启容器docker kill #关闭容器docker restart [container id] #重启容器# 查看正在运行的容器docker ps 成功后应该是下面这个页面 查看端口是否映射成功docker ps -a 浏览器启动虚拟机 IP：端口 获取密钥docker exec -it jenkins bash]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[实现一个简单的拖拽]]></title>
     <url>%2F2019%2F10%2F14%2Fdrap%2F</url>
     <content type="text"><![CDATA[采用了 h5 的新特性123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; .el &#123; flex-wrap: wrap; &#125; .a, .b &#123; width: 400px; height: 400px; border: 3px solid greenyellow; margin-right: 80px; margin-bottom: 50px; line-height: 400px; text-align: center; font-size: 56px; &#125; .flex &#123; display: flex; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class=&quot;el flex&quot;&gt; &lt;div class=&quot;a&quot; draggable=&apos;true&apos;&gt;1&lt;/div&gt; &lt;div class=&quot;b&quot; draggable=&apos;true&apos;&gt;2&lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;script&gt; let $ = (el) =&gt; document.querySelector(el) let $$ = (el) =&gt; document.querySelectorAll(el) class Drag &#123; constructor(dom) &#123; this.dom = dom this.fromDom = null this.toFrom = null &#125; init() &#123; let filterChild = [...this.dom.childNodes].filter(it =&gt; it.nodeName !== &quot;#text&quot; &amp;&amp; !/\s/.test(it.nodeValue)) filterChild.map(it =&gt; &#123; it.setAttribute(&apos;draggable&apos;, &apos;true&apos;) this.dragStart(it) this.dragEnter(it) this.drop(it) &#125;) &#125; dragStart(dom) &#123; let that = this dom.ondragstart = function () &#123; that.fromDom = dom &#125; &#125; dragEnter(dom) &#123; let that = this dom.ondragover = function (e) &#123; that.toFrom = dom e.preventDefault(); &#125; &#125; drop(dom) &#123; let that = this dom.ondrop = function (e) &#123; let d = that.fromDom.innerHTML that.fromDom.innerHTML = that.toFrom.innerHTML that.toFrom.innerHTML = d that.fromDom = null that.toDom = null &#125; &#125; &#125; let drap = new Drag($(&apos;.el&apos;)) drap.init()&lt;/script&gt;&lt;/html&gt;]]></content>
@@ -77,7 +85,7 @@
   <entry>
     <title><![CDATA[2019年10月18日]]></title>
     <url>%2F2018%2F12%2F20%2F2019%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[逆光 吴青峰]]></content>
       <tags>
         <tag>about</tag>
       </tags>
