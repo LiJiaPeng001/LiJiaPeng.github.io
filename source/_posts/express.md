@@ -29,3 +29,22 @@ app.listen(8888, () => console.log('我永远喜欢新垣结衣，8888'))
 ```
 
 学习完毕，关电脑玩游戏（滑稽）
+
+# router
+
+index 入口文件
+
+```
+app.use('/', require('./router/index.js'))
+```
+
+router 下的 index
+
+```
+const express = require('express')
+const router = express.Router()
+
+router.get('/', (req, res) => res.send('我是主页'))
+
+module.exports = router
+```
