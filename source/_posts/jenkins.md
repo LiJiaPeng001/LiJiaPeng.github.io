@@ -75,5 +75,6 @@ docker exec -it jenkins bash
 #### 配置钉钉机器人通知
 
 首先在钉钉创建自定义机器人，添加成功后获取到一个 access_token 保存好
+创建的时候添加地址即可，我加密然后就不行了
 然后在 jenkins 配置下载钉钉通知器插件，下载成功后在项目构建后操作选择钉钉通知器
 ![jenkins](jenkins/action.png)
