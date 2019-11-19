@@ -48,3 +48,46 @@ router.get('/', (req, res) => res.send('我是主页'))
 
 module.exports = router
 ```
+
+# 连接数据库
+
+```
+mkdir mysql
+cd mysql
+touch index.js
+yarn add mysql -S
+```
+
+安装后在 index.js 里边写入
+
+```
+var mysql = require('mysql')
+var db
+if (!db) {
+  db = mysql.createPool({
+    host: 'localhost',
+    user: 'admin',
+    password: '1',
+    database: 'lijiapeng'
+  })
+}
+
+module.exports = db
+
+```
+
+然后在路由文件引入
+
+```
+const express = require('express')
+const router = express.Router()
+const db = require('../mysql')
+
+router.get('/', (req, res) => {
+  db.query('select * from user', (err, data) => {
+    return res.json(data)
+  })
+})
+
+module.exports = router
+```
