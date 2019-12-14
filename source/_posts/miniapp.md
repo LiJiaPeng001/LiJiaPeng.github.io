@@ -6,4 +6,6 @@ tags: JavaScript
 
 # 登陆逻辑梳理
 
-敬请期待～
+# wx.checkSession
+
+# wx.login 换取 session_key
