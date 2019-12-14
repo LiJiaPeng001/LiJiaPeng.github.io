@@ -5,7 +5,8 @@
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+  <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+  <div style='text-align:center;margin-top:10px;'>{{ config.recordNumber}}</div>
 
   {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
@@ -27,6 +28,6 @@
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
-  #}{{ theme.footer.custom_text }}{#
+  #}123456{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
