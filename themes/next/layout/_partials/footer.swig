@@ -6,7 +6,7 @@
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
-  <div style='text-align:center;margin-top:10px;'>{{ config.recordNumber}}</div>
+  <a href='http://www.beian.miit.gov.cn' style='display:block;text-align:center;margin-top:10px;'>{{ config.recordNumber}}</a>
 
   {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
