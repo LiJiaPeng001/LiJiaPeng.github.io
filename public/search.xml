@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[downLoad]]></title>
+    <url>%2F2020%2F06%2F26%2FdownLoad%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566class DownLoad &#123; constructor(type) &#123; this.arr = &#123;&#125; this.type = type this.arr[type] = 0 &#125; int() &#123; this.arr[this.type] += 1 this.total() &#125; total() &#123; let num = Object.entries(this.arr).reduce((all, [key, value]) =&gt; &#123; all += value return all &#125;, 0); console.log(&apos;总数量：&apos;, num) return num &#125;&#125;class DownLoadSmall &#123; constructor(res = &#123; isDown: false, url: &apos;./1.png&apos; &#125;) &#123; this.arr = res &#125; start(DownLoad) &#123; if (this.arr.isDown) return this.arr return new Promise((resolve) =&gt; &#123; setTimeout(() =&gt; &#123; this.arr.isDown = true DownLoad.int() resolve(this.arr) &#125;, 500) &#125;) &#125;&#125;class Image &#123; constructor(images) &#123; this.images = images &#125; startDown(DownLoad) &#123; return new Promise(async resolve =&gt; &#123; for (let i = 0; i &lt; this.images.length; i++) &#123; let data = new DownLoadSmall(this.images[i]) this.images[i] = await data.start(DownLoad, this.images[i]) &#125; console.log(this.images) resolve() &#125;) &#125;&#125;let images = [ &#123; isDown: false, url: &apos;./1.png&apos; &#125;, &#123; isDown: false, url: &apos;./2.png&apos; &#125;, &#123; isDown: false, url: &apos;./3.png&apos; &#125;, &#123; isDown: false, url: &apos;./4.png&apos; &#125;, &#123; isDown: false, url: &apos;./5.png&apos; &#125;, &#123; isDown: false, url: &apos;./6.png&apos; &#125;, &#123; isDown: false, url: &apos;./7.png&apos; &#125;,]async function startDownImage() &#123; let imgClass = new DownLoad(&apos;image&apos;) let img = new Image(images) await img.startDown(imgClass) await img.startDown(imgClass)&#125;startDownImage()]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前端学习笔记]]></title>
     <url>%2F2019%2F12%2F05%2Fstudy%2F</url>
     <content type="text"><![CDATA[js:关于类型，有哪些你不知道的细节undefined 是一个变量，而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一，所以，我们为了避免无意中被篡改，我建议使用 void 0 来获取 undefined 值。Undefined 跟 null 有一定的表意差别，null 表示的是：“定义了但是为空”。所以，在实际编程时，我们一般不会把变量赋值为 undefined，这样可以保证所有值为 undefined 的变量，都是从未赋值的自然状态。 String 有最大长度是 2^53 - 1 基于对象而不是面向对象]]></content>
